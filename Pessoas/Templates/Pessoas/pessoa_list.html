@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de cadastrados</title>
+    <link href="{% static "/Lista/Style.css" %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body style="background-color: #8ADFC7;">
+
+    <nav class="navbar" style="background-color:#375950 ;">
+        <div class="container" id="nav">
+                <a href="{% url 'Homepage'%}" class="navbar-brand mb 0 h1" style="margin: 0px; ">
+                    <div class="brand" >
+                        <img src="https://cdn.pixabay.com/photo/2016/04/15/18/05/computer-1331579_1280.png" width="40" height="40" style="margin: 5px;">
+                        <h1 style="margin: 5px;">Meu Sistema de Cadastro</h1>
+                    </div>
+                </a>
+            
+
+                <div class="navlist">
+                    <Ul>
+                        
+                            <a href="{% url 'Homepage'%}">
+                                <li >Página inicial </li>
+                            </a>
+                        
+    
+                        
+                            <a href="{% url 'Pessoa.index' %}">
+                                <li >Lista de cadastrados</li>
+                            </a>
+
+                        
+                    </Ul>
+                </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container" id="form">
+            <form method="get">
+                    <label for="bnome">Busca por nome:</label>
+                    <input type="text" id="bnome" name="bnome" placeholder="Buscar por nome"><br>
+                    <label for="bdata">Busca por data: </label>
+                    <input type="date" id="bdata" name="bdata" placeholder="Buscar por data"><br>
+                    <div class="container" id="botoes">
+                        <input type="submit" value="Buscar" class="cadbutton"><br>
+                        <a href="{% url 'Pessoa.novo' %}"><Button class="cadbutton"> Cadastrar novo usuário</Button>
+                        </a>
+                    </div>
+            </form>
+        </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data de nascimento</th>
+                        <th>Ativa</th>
+                        <th colspan="2">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for Pessoa in object_list %}
+                    <tr>
+                        <td>{{ Pessoa.nome_completo}}</td>
+                        <td>{{ Pessoa.data_nascimento|date:"d/m/Y"}}</td>
+                        <td>
+                            {% if Pessoa.ativa %}
+                            Sim
+                            {% else %}
+                            Não
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{% url 'Pessoa.editar' Pessoa.pk %}">Editar</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'Pessoa.deletar' Pessoa.pk %}">Deletar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
