@@ -1,9 +1,5 @@
 @charset "utf-8";
-@include media-breakpoint-up(sm) {
-    .navbar {
-      display: block;
-    }
-    }
+
 :root{
     color: #525957
     #8ADFC7
@@ -20,11 +16,11 @@ body{
     background-color: #8ADFC7;
     
 }
-h1{
-    color: white;
-}
 .navbar{
     padding: 20px
+}
+h1{
+    color: white;
 }
 nav a, nav ul{
 
@@ -134,3 +130,4 @@ form{
     flex-direction: row;
     justify-content: space-around;
 }
+
