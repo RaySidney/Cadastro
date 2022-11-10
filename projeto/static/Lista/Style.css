@@ -20,10 +20,9 @@ body{
     padding: 20px
 }
 h1{
-    color: white;
+    color: white
 }
 nav a, nav ul{
-
     list-style-type: none;
     text-decoration: none;
     color: white;
@@ -43,6 +42,7 @@ nav li{
 .navlist a:hover{
     color: white;
     background-color: #1d332d;
+    transition-delay:  0.5s;
 }
 
 .brand{
@@ -131,3 +131,140 @@ form{
     justify-content: space-around;
 }
 
+@media screen and (max-width: 1280px){
+    .brand {
+        font-size: 2em;
+    }
+    nav ul{
+        font-size: 1.3em;
+    }
+    form{
+        display: flex;
+        width: 100%;
+        color: white;
+        padding: 10px;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    input#bnome, input#bdata{
+        width: 100%;
+        margin: 5px;
+    }
+    .container#botão{
+        padding: 0px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .cadbutton{
+        width: 100%;
+        margin: 5px 0px;
+    }
+
+}
+
+@media screen and (max-width: 830px){
+    main{
+        width: 90%;
+    }
+    form{
+        display: flex;
+        width: 100%;
+        color: white;
+        padding: 10px;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+    .container#botão{
+        padding: 10px;
+        
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    input.cadbutton{
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 540px){
+    form{
+        display: flex;
+        width: 100%;
+        color: white;
+        padding: 10px;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    input#bnome, input#bdata{
+        width: 70%;
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 415px){
+    .brand h1{
+        font-size: 1.2em;
+    }
+    main{
+        width: 98%;
+        margin: 10px auto;
+    }
+    form{
+        display: flex;
+        width: 100%;
+        color: white;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .container#botão{
+        padding: 0px;
+        display: inline-flex;
+        flex-direction: column;
+        margin: 0px;
+        justify-content: space-around;
+    }
+    input#bnome, input#bdata{
+        width: 100%;
+        margin: 5px;
+    }
+    table{
+        font-size: 0.9em;;
+    }
+    .cadbutton{
+        width: 100%;
+        
+    }
+}
+
+@media screen and (max-width: 285px) {
+    .brand{
+        font-size: 0.75em;
+        justify-content: center;
+        align-items: center; 
+    }
+    table{
+        margin: 5px auto;
+        font-size: 0.55em;
+    }
+    input#bnome, input#bdata{
+        width: 100%;
+    }
+    form{
+        width: 100%;
+        flex-direction: column;
+    }
+    .cadbutton{
+        width: 100%;
+    }
+}

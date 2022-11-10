@@ -14,7 +14,7 @@
         
                 <a href="{% url 'Homepage'%}" class="navbar-brand mb 0 h1" style="margin: 0px; ">
                     <div class="brand" >
-                        <img src="https://cdn.pixabay.com/photo/2016/04/15/18/05/computer-1331579_1280.png" width="40" height="40" style="margin: 5px;">
+                            <img src="https://cdn.pixabay.com/photo/2016/04/15/18/05/computer-1331579_1280.png" width="40" height="40" style="margin: 5px;">
                         <h1 style="margin: 5px;">Meu Sistema de Cadastro</h1>
                     </div>
                 </a>
@@ -42,11 +42,13 @@
     <main>
             <form method="get">
                     <label for="bnome">Busca por nome:</label>
-                    <input type="text" id="bnome" name="bnome" placeholder="Buscar por nome"><br>
+                    <input type="text" id="bnome" name="bnome" placeholder="Buscar por nome">
                     <label for="bdata">Busca por data: </label>
-                    <input type="date" id="bdata" name="bdata" placeholder="Buscar por data"><br>
-                    <input type="submit" value="Buscar" class="cadbutton"><br>
-                    <a href="{% url 'Pessoa.novo' %}"><Button class="cadbutton"> Cadastrar novo usuário</Button>
+                    <input type="date" id="bdata" name="bdata" placeholder="Buscar por data">
+                    <div class="container" id="botão">
+                        <input type="submit" value="Buscar" class="cadbutton">
+                        <a href="{% url 'Pessoa.novo' %}"><Button class="cadbutton"> Cadastrar novo usuário</Button>
+                    </div>
                     </a>
                     
             </form>
