@@ -15,9 +15,12 @@
 body{
     background-color: #8ADFC7;
     
+    
 }
 .navbar{
-    padding: 20px
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
 }
 h1{
     color: white
@@ -107,11 +110,9 @@ form{
     color: white;
     padding: 10px;
     align-content: center;
-    justify-content: space-around;
-    align-items: baseline;
-}
-#form{
-    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .cadbutton{
     border: 0px;
@@ -123,13 +124,26 @@ form{
 .cadbutton:hover{
     background-color: #808382;
 }
-.container#botoes{
-    width: 30%;
-    margin: 0px;
+.container#botão{
+    padding: 0px;
     display: inline-flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
+    width: 100%;
 }
+.cadbutton{
+    width: 100%;
+    margin: 5px 0px;
+}
+
+input#bnome, input#bdata{
+    width: 100%;
+    margin: 5px;
+}
+input#id_email{
+    width: 100%;
+}
+
 
 @media screen and (max-width: 1280px){
     .brand {
@@ -195,6 +209,10 @@ form{
 }
 
 @media screen and (max-width: 540px){
+    table{
+        font-size: 0.8em;
+
+    }
     form{
         display: flex;
         width: 100%;
@@ -239,7 +257,7 @@ form{
         margin: 5px;
     }
     table{
-        font-size: 0.9em;;
+        font-size: 0.8em;
     }
     .cadbutton{
         width: 100%;

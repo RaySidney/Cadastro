@@ -7,44 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página inicial</title>
     <link href="{% static "/Homepage/Style.css" %}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{% static '/Imagens/favicon.ico' %}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 </head>
 <body style="background-color: #8ADFC7;">
-    <header>
-        <nav class="navbar fixed-top" style="background-color:#375950 ;">
+    
+    <nav class="navbar" style="background-color:#375950 ; justify-content: space-evenly; font-size: 0.8em; " >
+        
+        <a href="{% url 'Homepage'%}" class="navbar-brand" style="margin: 0px; ">
+            <div class="brand" >
+                    <img src="https://cdn.pixabay.com/photo/2016/04/15/18/05/computer-1331579_1280.png" width="40" height="40" style="margin: 5px;">
+                <h1 style="margin: 5px;">Meu Sistema de Cadastro</h1>
+            </div>
+        </a>
+    
 
-            <div class="container" id="nav">
-                    <a href="{% url 'Homepage'%}" class="navbar-brand mb 0 h1" style="margin: 0px; ">
-                        <div class="brand" >
-                            <img src="https://cdn.pixabay.com/photo/2016/04/15/18/05/computer-1331579_1280.png" width="40" height="40" style="margin: 5px;">
-                            <h1 style="margin: 5px;">Meu Sistema de Cadastro</h1>
-                        </div>
+        <div class="navlist">
+            <Ul>
+                
+                    <a href="{% url 'Homepage'%}">
+                        <li >Página inicial </li>
                     </a>
                 
 
-                    <div class="navlist">
-                        <Ul>
-                            
-                                <a href="{% url 'Homepage'%}">
-                                    <Li>Página inicial </Li>
-                                </a>
-                           
-        
-                            
-                                <a href="{% url 'Pessoa.index' %}">
-                                    <Li>Lista de cadastrados</Li>
-                                </a>
+                
+                    <a href="{% url 'Pessoa.index' %}">
+                        <li >Lista de cadastrados</li>
+                    </a>
 
-                            
-                        </Ul>
-                    </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-        
-    </main>
+                
+            </Ul>
+        </div>
+
+</nav>
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
